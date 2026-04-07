@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="noise"></div>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">ROCK<br>PAPER<br>SCISSORS</h1>
+            <p class="subtitle">Human vs Machine</p>
+        </header>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-block">
+                <span class="score-num" id="wins">0</span>
+                <span class="score-label">Wins</span>
+            </div>
+            <div class="score-block score-block--center">
+                <span class="score-num" id="ties">0</span>
+                <span class="score-label">Ties</span>
+            </div>
+            <div class="score-block">
+                <span class="score-num" id="losses">0</span>
+                <span class="score-label">Losses</span>
+            </div>
+        </div>
+
+        <!-- Arena -->
+        <div class="arena">
+            <div class="fighter fighter--player">
+                <div class="fighter__emoji" id="playerEmoji">❓</div>
+                <div class="fighter__label">YOU</div>
+                <div class="fighter__choice" id="playerChoice">—</div>
+            </div>
+
+            <div class="vs-badge">VS</div>
+
+            <div class="fighter fighter--cpu">
+                <div class="fighter__emoji" id="cpuEmoji">🤖</div>
+                <div class="fighter__label">CPU</div>
+                <div class="fighter__choice" id="cpuChoice">—</div>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="result-box" id="resultBox">
+            <p id="resultMessage">Choose your weapon to begin!</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="weapon-btn" data-choice="R" aria-label="Rock">
+                <span class="weapon-emoji">🪨</span>
+                <span class="weapon-name">Rock</span>
+            </button>
+            <button class="weapon-btn" data-choice="P" aria-label="Paper">
+                <span class="weapon-emoji">📄</span>
+                <span class="weapon-name">Paper</span>
+            </button>
+            <button class="weapon-btn" data-choice="S" aria-label="Scissors">
+                <span class="weapon-emoji">✂️</span>
+                <span class="weapon-name">Scissors</span>
+            </button>
+        </div>
+
+        <!-- Reset -->
+        <button class="reset-btn" id="resetBtn">Reset Score</button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
